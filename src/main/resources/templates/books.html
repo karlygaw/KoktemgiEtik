@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>Book</h1>
+<h2>View Books</h2>
+<table>
+    <tr>
+        <th>Book Name</th>
+        <th>Book Genre</th>
+    </tr>
+    <tr th:each="b: ${book}">
+        <td th:text="${b.name}"></td>
+        <td th:text="${b.genre}"></td>
+    </tr>
+</table>
+<form action="/books" method="post">
+    Name: <input type="text" name="name"><br />
+    Genre: <input type="text" name="genre"><br />
+    <button type="submit">Add book</button>
+</form>
+</body>
+</html>
